@@ -404,20 +404,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             dB4OUtil.storeSystem(system);
             }
         }
-
-
-
-        // WORK REQUEST
-        
-        WorkRequest request = new SystemCoordinatorTestWorkRequest();
-        
-        request.setPatient(patient);
-        request.setActionDate(new Date());
-        request.setAssigned("Legal Department");
-        request.setSummary("Requested for BoneMarrow Reception");
-        request.setStatus("Assigned to Legal Department");
-        
-        request.setUserAccount(userAccount);
        
         Enterprise ent = null;
         Organization org = null;
@@ -441,6 +427,17 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         }
         
         if (org != null) {
+            // WORK REQUEST
+        
+            WorkRequest request = new SystemCoordinatorTestWorkRequest();
+
+            request.setPatient(patient);
+            request.setActionDate(new Date());
+            request.setAssigned("Legal Department");
+            request.setSummary("Requested for BoneMarrow Reception");
+            request.setStatus("Assigned to Legal Department");
+
+            request.setUserAccount(userAccount);
             org.getWorkQueue().getWorkRequestList().add(request);
             System.out.println(org.getName());
             userAccount.getWorkQueue().getWorkRequestList().add(request);
@@ -449,15 +446,17 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             dB4OUtil.storeSystem(system);
             populateRequestTable();
             JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Request approved successfully!</b></html>"));
+            statusText.setText("Centre Approved");
            
             //JOptionPane.showMessageDialog(null,"Request Sent Successfully", "Info", JOptionPane.INFORMATION_MESSAGE);
             
         } else {
         
          JOptionPane.showMessageDialog(null, "No organization present", "Error", JOptionPane.ERROR_MESSAGE);
+         return;
         }
 
-        statusText.setText("Centre Approved");
+        
         dB4OUtil.storeSystem(system);
         populateRequestTable();
       //  JOptionPane.showMessageDialog(null,"New patient has been added!");
