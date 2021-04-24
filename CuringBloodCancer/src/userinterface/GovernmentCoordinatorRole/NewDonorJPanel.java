@@ -695,10 +695,10 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         }
         
         if(btnYesQ2.isSelected())
-        {donorRequest.setDiabitiesBP(true); //  symptoms
+        {donorRequest.setBreathingProb(true); //  symptoms
         }
         else if(btnNoQ2.isSelected())
-        {donorRequest.setDiabitiesBP(false); //  symptoms
+        {donorRequest.setBreathingProb(false); //  symptoms
         }
         
         if(btnYesQ3.isSelected())
@@ -709,10 +709,10 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         }
         
         if(btnYesQ4.isSelected())
-        {donorRequest.setBreathingProb(true); //  followUpTest
+        {donorRequest.setChronicPains(true); //  followUpTest
         }
         else if(btnNoQ4.isSelected())
-        {donorRequest.setBreathingProb(false); //  followUpTest
+        {donorRequest.setChronicPains(false); //  followUpTest
         }
         system.getDonorRequestDirectory().addDonorRequest(donorRequest); 
         JOptionPane.showMessageDialog(null, new JLabel("<html><b>Thank you for volunteering to save a life!</b></html>"));

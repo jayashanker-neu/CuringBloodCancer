@@ -522,8 +522,8 @@ public class VolunteerDonorRequestJPanel extends javax.swing.JPanel {
             }
             if(txtChronicPains.getText().equals("false")) // Has it been at least 14 days since the last day of your symptoms?
             {
-            //txtChronicPains.setBorder(BorderFactory.createLineBorder(Color.RED));
-            //txtChronicPains.setForeground(Color.red);
+            txtChronicPains.setBorder(BorderFactory.createLineBorder(Color.RED));
+            txtChronicPains.setForeground(Color.red);
             }
 
             
@@ -569,7 +569,7 @@ public class VolunteerDonorRequestJPanel extends javax.swing.JPanel {
         donor.setCity(cityText.getText()); // city
         donor.setState(stateText.getText()); // state
         donor.setZipCode(Integer.parseInt(zipText.getText())); // zipCode
-        donor.setContact(Integer.parseInt(contactText.getText())); // contact
+        donor.setContact(Long.parseLong(contactText.getText())); // contact
         donor.setEmailID(statusText.getText()); // emailID
         donor.setStatus("Government Approved"); // status
     
