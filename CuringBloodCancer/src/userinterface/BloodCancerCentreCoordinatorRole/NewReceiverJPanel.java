@@ -63,13 +63,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         radioGroup1.add(buttonNo);
         
         populateGenderComboBox();
-        populateStateComboBox();
-        
-        
-        //JLabel search = new JLabel("<html><marquee>Search</marquee><html>");
-        
-        
-        
+        populateStateComboBox();        
     }
   
     private void populateGenderComboBox(){
@@ -507,7 +501,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 )
                 
             { 
-                JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
              return ;
         //    JOptionPane.showMessageDialog(null, "All fields are mandatory!", "Error", JOptionPane.ERROR_MESSAGE);
           //   return ;
@@ -515,7 +509,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
          
        else if(  !buttonNo.isSelected()  &&  !buttonYes.isSelected())
         {
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
              return ;
         //JOptionPane.showMessageDialog(null, "All fields are mandatory!", "Error", JOptionPane.ERROR_MESSAGE);
         
@@ -524,7 +518,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
        else   if ( !phoneNumberValidator(contactText.getText())   ){
            contactText.setBorder(BorderFactory.createLineBorder(Color.RED));
             contactText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Contact Number</I></font> should be<font color='green'> 10 digit</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Contact Number should be 10 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            // return;
            //JOptionPane.showMessageDialog(null, "Contact number should be 10 digit" , "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -533,7 +527,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         else   if (  !zipCodeValidator(zipText.getText()) ){
             zipText.setBorder(BorderFactory.createLineBorder(Color.RED));
             zipText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Zip</I></font> should be<font color='green'> 5 digit</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Zip should be 5 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            return;
            //JOptionPane.showMessageDialog(null, "Zip should be 5 digit" , "Error", JOptionPane.ERROR_MESSAGE);
            // return;
@@ -543,7 +537,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         {
          nameText.setBorder(BorderFactory.createLineBorder(Color.RED));
             nameText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Name</I></font> must contain only<font color='green'> alphabets</font></h2>!</html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name must contain only alphabets</b>!</html>") , "Error", JOptionPane.ERROR_MESSAGE);
             return;
             //JOptionPane.showMessageDialog(null, "Name must contain only alphabets." , "Error", JOptionPane.ERROR_MESSAGE);
             //return;
@@ -552,7 +546,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         {
          cityText.setBorder(BorderFactory.createLineBorder(Color.RED));
             cityText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2>Name of the<font color='red'><I> City</I></font> must contain only<font color='green'> alphabets</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name of the City must contain only alphabets!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             return;
             //JOptionPane.showMessageDialog(null, "City name must contain only alphabets." , "Error", JOptionPane.ERROR_MESSAGE);
             //return;
@@ -561,7 +555,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         else   if ( !emailValidator(emailText.getText()) ){
             emailText.setBorder(BorderFactory.createLineBorder(Color.RED));
             emailText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Email ID</I></font> must be in<font color='green'> correct format</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in correct format!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 //           JOptionPane.showMessageDialog(null, "Email ID must be in correct format!" , "Error", JOptionPane.ERROR_MESSAGE);
            return;
         } 
@@ -574,12 +568,11 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 patientrequest.getHla().updateHLAlist(hlaTypesText.getText());
             }
             catch (Exception e) {
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Patient's HLA Type can only be one of these <font color='red'>HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</font></I></h2></html>"));
+                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
                 return;
             }
-        
-//             int n = JOptionPane.showConfirmDialog(null,"Would you like to submit the form?","CONFIRMATION REQUIRED",JOptionPane.YES_NO_OPTION);
-               int n = JOptionPane.showConfirmDialog(null,new JLabel("<html><h2>Would you like to<font color='green'><I> submit</I></font> the form?</h2></html>"),
+            
+            int n = JOptionPane.showConfirmDialog(null,new JLabel("<html><b>Would you like to submit the form?</b></html>"),
                     "CONFIRMATION REQUIRED",JOptionPane.YES_NO_OPTION);
 
             if(n == 0)
@@ -613,8 +606,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         {patientrequest.setLabConfirmation(false); //  labConfirmation
         }
      
-        //JOptionPane.showMessageDialog(null, "Thank you for registering for HELP! We will soon get back to you. Take Care!");
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2>Thank you for registering for<font color='green'><I><B> HELP!</B></I></font> We will soon get back to you. <font color='green'><I><B>Take Care!!</B></I></font></h2></html>"));
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>Thank you for registering! We will soon get back to you. <br>Take Care!!</b></html>"));
         
         
         

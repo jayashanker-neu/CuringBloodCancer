@@ -241,14 +241,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         
         if (txtNetWorkName.getText().isEmpty() || txtState.getText().isEmpty() || txtCountry.getText().isEmpty() ){
             //JOptionPane.showMessageDialog(null, "All fields are mandatory!" , "Error", JOptionPane.ERROR_MESSAGE);
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             
             return;
         }
         else{
         for ( Network network :system.getNetworkList()){
         if( network.getName().equals(txtNetWorkName.getText())) {
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Network Name</I></font> can not be <font color='red'>same</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>Network Name can not be same!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                     
         //JOptionPane.showMessageDialog(null, "Network name cannot be same!" , "Error", JOptionPane.ERROR_MESSAGE);
         check1 = "no";
@@ -261,7 +261,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
               txtState.setBorder(BorderFactory.createLineBorder(Color.RED));
               txtState.setForeground(Color.red);
               
-              JOptionPane.showMessageDialog(null, new JLabel("<html><h2>Name of the<font color='red'><I> State</I></font> must contain only<font color='green'> alphabets</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+              JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name of the State must contain only alphabets!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
           
               
         }
@@ -271,7 +271,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
               check1 = "no";
               txtCountry.setBorder(BorderFactory.createLineBorder(Color.RED));
               txtCountry.setForeground(Color.red);
-              JOptionPane.showMessageDialog(null, new JLabel("<html><h2>Name of the<font color='red'><I> Country</I></font> must contain only<font color='green'> alphabets</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+              JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name of the Country must contain only alphabets!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
           
         }
         
@@ -326,7 +326,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         }
         else 
             return;
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Network Name</I></font> can not be <font color='red'>found</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>Network Name can not be found!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_btnDeleteNetworkActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

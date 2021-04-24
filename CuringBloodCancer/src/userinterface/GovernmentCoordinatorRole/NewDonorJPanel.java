@@ -596,7 +596,7 @@ public class NewDonorJPanel extends javax.swing.JPanel {
                 String.valueOf(hlaTypesTextField.getText()).equals("") || 
                 String.valueOf(stateJComboBox.getSelectedItem()).equals(""))
             { 
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
              return ;
             }
    
@@ -606,7 +606,7 @@ public class NewDonorJPanel extends javax.swing.JPanel {
                   !btnNoQ3.isSelected()  &&  !btnYesQ3.isSelected()   ||
                   !btnNoQ4.isSelected()  &&  !btnYesQ4.isSelected()   )
         {
-        JOptionPane.showMessageDialog(null,new JLabel("<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>"), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null,new JLabel("<html><b>All fields are mandatory!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
         return;
         }
         
@@ -615,14 +615,14 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         {
          nameText.setBorder(BorderFactory.createLineBorder(Color.RED));
             nameText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Name</I></font> must contain only<font color='green'> alphabets</font></h2>!</html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name must contain only alphabets</b>!</html>") , "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         else if (!isAlpha(cityText.getText()))
         {
          cityText.setBorder(BorderFactory.createLineBorder(Color.RED));
             cityText.setForeground(Color.red);
-         JOptionPane.showMessageDialog(null, new JLabel("<html><h2>Name of the<font color='red'><I> City</I></font> must contain only<font color='green'> alphabets</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name of the City must contain only alphabets!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             return;
             //JOptionPane.showMessageDialog(null, "City name must contain only alphabets." , "Error", JOptionPane.ERROR_MESSAGE);
             //return;
@@ -630,25 +630,25 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         
         else   if ( !phoneNumberValidator(contactText.getText())   ){
            //JOptionPane.showMessageDialog(null, "Contact number should be 10 digit and Zip should be 5 digit" , "Error", JOptionPane.ERROR_MESSAGE);
-           JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Contact Number</I></font> should be<font color='green'> 10 digit</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null, new JLabel("<html><b>Contact Number should be 10 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            // return;
            return;
         }
         else   if ( !zipCodeValidator(zipText.getText()) ){
            //JOptionPane.showMessageDialog(null, "Contact number should be 10 digit and Zip should be 5 digit" , "Error", JOptionPane.ERROR_MESSAGE);
-           JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Zip</I></font> should be<font color='green'> 5 digit</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null, new JLabel("<html><b>Zip should be 5 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            return;
         }
         else   if ( !emailValidator(emailText.getText()) ){
            //JOptionPane.showMessageDialog(null, "Email ID must be in correct format!" , "Error", JOptionPane.ERROR_MESSAGE);
-JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Email ID</I></font> must be in<font color='green'> correct format</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in correct format!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
            return;
         } 
         
         else if (dobDateField.getDate().after(currentDate)) {
              //JOptionPane.showMessageDialog(null, "Date should be past date", "Error", JOptionPane.ERROR_MESSAGE);
-             JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Are you booking for your children? Sorry, we don't accept it as of today!</I></font></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(null, new JLabel("<html><b>Are you booking for your children? Sorry, we don't accept it as of today!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
              return;}          
           
@@ -657,11 +657,11 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>E
                 donorRequest.getHLA().updateHLAlist(hlaTypesTextField.getText());
             }
             catch (Exception e) {
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Patient's HLA Type can only be one of these <font color='red'>HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</font></I></h2></html>"));
+                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
                 return;
             }
 
-            int n = JOptionPane.showConfirmDialog(null,new JLabel("<html><h2>Would you like to<font color='green'><I> submit</I></font> the form?</h2></html>"),
+            int n = JOptionPane.showConfirmDialog(null,new JLabel("<html><b>Would you like to submit the form?</b></html>"),
                     "CONFIRMATION REQUIRED",JOptionPane.YES_NO_OPTION);
 
             if(n == 0)
@@ -715,7 +715,7 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>E
         {donorRequest.setBreathingProb(false); //  followUpTest
         }
         system.getDonorRequestDirectory().addDonorRequest(donorRequest); 
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2>Thank you for registering to<font color='green'><I><B> HELP</B></I></font>!</h2></html>"));
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>Thank you for volunteering to save a life!</b></html>"));
         
         dB4OUtil.storeSystem(system);
         disableAllButton();
@@ -822,8 +822,6 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>E
         lblProfilePicture.removeAll();
         
         btnSubmit.setEnabled(true);
-        
-        //JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><font color='red'>Hello</font>, world </h2></html>"));
             
        
     }//GEN-LAST:event_jButton2ActionPerformed

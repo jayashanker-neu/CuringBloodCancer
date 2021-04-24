@@ -7,6 +7,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
+import java.io.File;
 import java.nio.file.Paths;
 
 /**
@@ -44,7 +45,7 @@ public class DB4OUtil {
 
             //Register your top most Class here
             config.common().objectClass(EcoSystem.class).cascadeOnUpdate(true); // Change to the object you want to save
-
+            
             ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
             return db;
         } catch (Exception ex) {
@@ -55,6 +56,14 @@ public class DB4OUtil {
 
     public synchronized void storeSystem(EcoSystem system) {
         ObjectContainer conn = createConnection();
+        File f= new File(FILENAME);
+        try {
+            f.delete();
+            f.createNewFile();
+        }
+        catch (Exception e) {
+            
+        }
         conn.store(system);
         conn.commit();
         conn.close();

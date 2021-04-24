@@ -316,7 +316,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
              nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED));
             nameJTextField.setForeground(Color.red);
             
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Name</I><font color='red'> can not </font><I>be empty!</I></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>User Name can not be empty!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                    
             //JOptionPane.showMessageDialog(null, "Username cannot be empty");
             //return;
@@ -326,7 +326,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             passwordJTextField.setBorder(BorderFactory.createLineBorder(Color.RED));
             passwordJTextField.setForeground(Color.red);
             
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'> Password</font><I> must be atleast 4 digits!</I></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b> Password must be atleast 4 digits!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                    
             //JOptionPane.showMessageDialog(null, "Password should be more than 4 Digit");
             //return;
@@ -334,7 +334,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         }
          else if (!checkUserIdExists(nameJTextField.getText())){
             
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Name</I><font color='red'> already </font><I>present!</I></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>User Name already present!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                    
              //JOptionPane.showMessageDialog(null, "UserName Already Present","Warning",JOptionPane.WARNING_MESSAGE);
             //return;
@@ -350,7 +350,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         popData();
         
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Account</I><font color='green'> created </font><I>successfully!/I<></h2></html>") );//, "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>User Account created successfully!</b></html>") );//, "Error", JOptionPane.ERROR_MESSAGE);
                    
         //JOptionPane.showMessageDialog(null, "User account for " + userName + " created Successfully");
 

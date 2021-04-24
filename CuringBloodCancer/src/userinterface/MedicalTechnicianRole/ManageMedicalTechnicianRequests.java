@@ -382,7 +382,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
         
         if (selectedRow < 0){
          //JOptionPane.showMessageDialog(null, "Please select a row first!" );
-         JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+         JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             return;
         }
@@ -399,7 +399,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
         }
         else{
             
-        JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
                 
         //JOptionPane.showMessageDialog(null, "Work Request is already assigned!" );
         }
@@ -418,7 +418,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
         int selectedRow = tblMedTechDonors.getSelectedRow();
         
         if (selectedRow < 0){
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Kindly select a<font color='red'> row!</font><I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Kindly select a row!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -426,14 +426,14 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
             checkBoneMarrow.setBorder(BorderFactory.createLineBorder(Color.RED));
             checkBoneMarrow.setForeground(Color.red);
            // JOptionPane.showMessageDialog(null, "Kindly Test for other Infections!", "Error", JOptionPane.ERROR_MESSAGE);
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Kindly do the<font color='red'> Test</font> for other infections!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Kindly do the Test for other infections!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
         }
         else if(txtHLAList.getText().equals(null)){
             txtHLAList.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtHLAList.setForeground(Color.red);
            // JOptionPane.showMessageDialog(null, "Kindly select a Blood Group!", "Error", JOptionPane.ERROR_MESSAGE);
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Kindly select a<font color='red'> HLA Type!</font><I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Kindly select a HLA Type!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
         }
         else{
@@ -445,9 +445,9 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
               }
         }  
         if(ep == null){
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>"
-                    + "<font color='red'> There is no BoneMarrow Bank!</font><I>"
-                    + "</h2></html>"), 
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>"
+                    + " There is no BoneMarrow Bank!"
+                    + "</b></html>"), 
                     "Warning", 
                     JOptionPane.WARNING_MESSAGE);
         }
@@ -476,7 +476,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
                 populateOrganizationDonorTable();
                 populateMedTechDonorTable();
             
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>BoneMarrow<font color='green'> added</font> to the bank!<I></h2></html>"));
+                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>BoneMarrow added to the bank!</b></html>"));
            
                 
                 buttonAddMarrow.setEnabled(false);
@@ -500,7 +500,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
                 
         if (selectedRow < 0){
             
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a Request Number</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a Request Number from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
            //JOptionPane.showMessageDialog(null, "Please select a row first!" );
             return;
@@ -518,7 +518,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
             checkPulse.setForeground(Color.red);
         }        
         else if( !checkBP.isSelected()  || !checkTest.isSelected()  ||  !checkPulse.isSelected())
-        {   JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Kindly do the<font color='red'> Health Check of the Donor</font> before the<font color='green'> BoneMarrow Donation</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+        {   JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Kindly do the Health Check of the Donor before the BoneMarrow Donation</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
             //JOptionPane.showMessageDialog(null, "Kindly do the Heatlth Check of the Donor before the Donation!" , "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -539,7 +539,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
                 populateOrganizationDonorTable();
                 populateMedTechDonorTable();
                 
-                JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='green'><I>Bone Marrow Donated!</I></font></h2></html>"));
+                JOptionPane.showMessageDialog(null, new JLabel("<html><b>Bone Marrow Donated!</b></html>"));
            
         for(Donor dnr: system.getDonorDirectory().getDonorList()){
             if(dnr.getDonorID().equals(request1.getDonor().getDonorID())){
@@ -567,7 +567,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
         int selectedRow = tblMedTechDonors.getSelectedRow();
         
         if (selectedRow < 0){
-             JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
            // JOptionPane.showMessageDialog(null, "Please select a row first!" );
             return;
@@ -585,14 +585,14 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
        txtHLAList.setText(tblMedTechDonors.getValueAt(selectedRow, 3).toString());
         }
         else if(request.getStatus().contains("BoneMarrow Donated")){
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Sir!!!!<br>BoneMarrow is already Donated</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Sir!!!!<br>BoneMarrow is already Donated</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
         }
         else if(request.getStatus().contains("BoneMarrow Discarded")) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please check the status!<br>BoneMarrow is already discarded</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please check the status!<br>BoneMarrow is already discarded</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
         }
         else{
             
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
                 
             //JOptionPane.showMessageDialog(null, "Request is already processed!" );
         }
@@ -608,7 +608,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblMedTechDonors.getSelectedRow();
         if (selectedRow < 0){
-             JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             //JOptionPane.showMessageDialog(null, "Please select a row first!" );
             return;
         }
@@ -618,7 +618,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
             request.setStatus("BoneMarrow Discarded");
             populateOrganizationDonorTable();
             populateMedTechDonorTable();
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>BoneMarrow Discarded!</I></font></h2></html>"));  
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>BoneMarrow Discarded!</b></html>"));  
         
         buttonAddMarrow.setEnabled(false);
         buttonBoneMarrowDiscard.setEnabled(false);

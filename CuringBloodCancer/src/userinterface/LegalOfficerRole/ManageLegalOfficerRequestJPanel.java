@@ -280,7 +280,7 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         
         if (selectedRow < 0){
            //JOptionPane.showMessageDialog(null, "Please select a row", "Error", JOptionPane.ERROR_MESSAGE);
-           JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Error", JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
             
         }
         else{
@@ -294,7 +294,7 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
             }
             else{
             //JOptionPane.showMessageDialog(null, "Work Request is already assigned!" );
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
              
             }
             dB4OUtil.storeSystem(system);
@@ -309,7 +309,7 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
 
         if(toTextField.getText().equals("") || subjectTextField.getText().equals("") ||  messageTextField.getText().equals("")){
 
-            JOptionPane.showMessageDialog(null,new JLabel("<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>"), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel("<html><b>All fields are mandatory!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
        
             //JOptionPane.showMessageDialog(null, "Please fill all the fields!" );
         }
@@ -359,7 +359,7 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
        
         if(selectedRow <0){
         //JOptionPane.showMessageDialog(null,"Please select a row");
-        JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
         }
         else{
@@ -374,7 +374,7 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         populateOrganisationpatientTable();
         populateLegalPatientTable();
         
-        JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Consent Form<font color='green'> sent</font> successfully!</I></font></h2></html>"),"Info", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Consent Form sent successfully!</b></html>"),"Info", JOptionPane.INFORMATION_MESSAGE);
       
         //JOptionPane.showMessageDialog(null,"Consent Form Sent Successfully", "Info", JOptionPane.INFORMATION_MESSAGE);
         }

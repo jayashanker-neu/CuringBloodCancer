@@ -233,7 +233,7 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
         
         if (selectedRow < 0){
         
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Please select a<font color='red'> request number</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Please select a request number from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
             //JOptionPane.showMessageDialog(null, "Please select a row first" );
             return;
@@ -248,7 +248,7 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
         userAccount.getWorkQueue().getWorkRequestList().add(request);
         }
         else{
-         JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+         JOptionPane.showMessageDialog(null, new JLabel("<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
                 
             
         //JOptionPane.showMessageDialog(null, "Work Request is already assigned!" );
@@ -266,7 +266,7 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
         int selectedRow = tblDoctor.getSelectedRow();
         
         if (selectedRow < 0){
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Please select a<font color='red'> request number</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Please select a request number from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
            // JOptionPane.showMessageDialog(null, "Please select a row" );
             return;
@@ -281,7 +281,7 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
         populateOrganisationpatientTable();
         populateDoctorPatientTable();
         
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Congratulations for saving a life!!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>Congratulations for saving a life!!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
         
         }
         

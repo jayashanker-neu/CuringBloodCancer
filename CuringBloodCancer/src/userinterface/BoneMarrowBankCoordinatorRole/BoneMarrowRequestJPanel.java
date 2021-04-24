@@ -217,7 +217,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
         
         if (selectedRow < 0){
             //JOptionPane.showMessageDialog(null, "Please select a row first!" );
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             return;
         }
@@ -225,8 +225,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
             WorkRequest request = (WorkRequest)tblBoneMarrowCoordinator.getValueAt(selectedRow, 0);
             if(request.getStatus().equals("Legally Approved. Passing to BoneMarrowBank")
                 || request.getStatus().equals("On Hold Due to BoneMarrow unavailability")){
-                request.setStatus("BoneMarrowBank Approved. Passing to System Coordinator");
-        
+                
                 dB4OUtil.storeSystem(system);
                 populateBoneMarrowCoordinatorTable();
         
@@ -239,6 +238,13 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
                             break;
                     }
                 }
+                
+                if(ent == null) {
+                    JOptionPane.showMessageDialog(null, 
+                            new JLabel(  "<html><b>There is no Hospital Enterprise.<br> Cannot proceed..</b></html>")
+                            , "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                
                 for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
                     if(organization instanceof SystemCoordinatorOrganization) {
                         org = organization;
@@ -247,16 +253,15 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
                 }
         
                 if (org != null) {
+                    request.setStatus("BoneMarrowBank Approved. Passing to System Coordinator");
                     org.getWorkQueue().getWorkRequestList().add(request);
-//                    org.getBloodGroup().subtractBloodGroup(request.getPatient().getBloodGroup());
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "No organization present", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
             else{
-                // JOptionPane.showMessageDialog(null, "Work Request is already in progress!" );
-                 JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+                 JOptionPane.showMessageDialog(null, new JLabel("<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
                 
             }
         }
@@ -272,7 +277,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
         if (selectedRow < 0){
             //JOptionPane.showMessageDialog(null, "Please select a row first!" );
             
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table!</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             
             return;
@@ -286,7 +291,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
                 populateBoneMarrowCoordinatorTable();   
             }
             else{
-              JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+              JOptionPane.showMessageDialog(null, new JLabel("<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
                 
               //  JOptionPane.showMessageDialog(null, "Work Request is already in progress!" ); 
             }
@@ -300,7 +305,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
         int selectedRow = tblBoneMarrowCoordinator.getSelectedRow();
        // jPanel1.setVisible(true);
         if (selectedRow < 0){   
-            //JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table!</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            //JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
              return;
         }
          else{
@@ -314,7 +319,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
                 //populateBoneMarrowCoordinatorTable();   
             }
             else{
-              //JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+              //JOptionPane.showMessageDialog(null, new JLabel("<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
 //                 jPanel1.setVisible(false);
               //  JOptionPane.showMessageDialog(null, "Work Request is already in progress!" ); 
             }

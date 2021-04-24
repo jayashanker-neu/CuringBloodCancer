@@ -338,7 +338,7 @@ public class CreateDonorJPanel extends javax.swing.JPanel {
             donor.getHla().updateHLAlist(hlaTypeTextField.getText());
         }
         catch (Exception e) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Donor's HLA Type can only be one of these <font color='red'>HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</font></I></h2></html>"));
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Donor's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
             return;
         }
         donor.setStatus("Government Approved");
@@ -346,7 +346,7 @@ public class CreateDonorJPanel extends javax.swing.JPanel {
 
         dB4OUtil.storeSystem(system);
         populateTable();
-         JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>A new<font color='green'> Donor added! </I></font></h2></html>"));
+         JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>A new Donor added! </b></html>"));
            
         //JOptionPane.showMessageDialog(null,"new Donor added!");
         nameTextField.setText("");
@@ -364,15 +364,10 @@ public class CreateDonorJPanel extends javax.swing.JPanel {
         
          int selectedRow = tblGoogleSheet.getSelectedRow();
         if(selectedRow < 0){
-           // JOptionPane.showMessageDialog(null,"Please select a row from the table first to View Details!","Warning!",JOptionPane.WARNING_MESSAGE);
-            
-//             JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table!</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
-           
+
         }
         else{
-            
-            //String.valueOf(tblGoogleSheet.getValueAt(selectedRow, 0));
-        
+                    
         nameTextField.setText( String.valueOf(tblGoogleSheet.getValueAt(selectedRow, 1)));
         contactTextField.setText( String.valueOf(tblGoogleSheet.getValueAt(selectedRow, 2)));
         uidTextField.setText( String.valueOf(tblGoogleSheet.getValueAt(selectedRow, 0)));

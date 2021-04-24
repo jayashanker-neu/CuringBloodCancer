@@ -346,25 +346,29 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         {
             organizationJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             organizationJComboBox.setForeground(Color.red);
-            //JOptionPane.showMessageDialog(null, "Select an Organization Type please!");
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Select an<font color='red'> Organization Type</font> please!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
-            check1 = "don't go ahead";
+            JOptionPane.showMessageDialog(null, 
+                    new JLabel("<html><b>Select an Organization Type!</b></html>"), 
+                    "Warning", JOptionPane.WARNING_MESSAGE);
+            check1 = "return";
         }
         
         else if (organizationEmpJComboBox.getSelectedItem().equals(null) )
         {
            organizationEmpJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             organizationEmpJComboBox.setForeground(Color.red);
-             JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Select an<font color='red'> Organization Name</font> please!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
-           // JOptionPane.showMessageDialog(null, "Select an Organization Name please!");
-            check1 = "don't go ahead";
+             JOptionPane.showMessageDialog(null, 
+                     new JLabel("<html><b>Select an Organization Name!</b></html>"), 
+                     "Warning", JOptionPane.WARNING_MESSAGE);
+            check1 = "return";
         }
         else if (nameJTextField.getText().isEmpty()) {
            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED));
             nameJTextField.setForeground(Color.red);
-             JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Employee Name<font color='red'> can not</font> be same!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, 
+                     new JLabel("<html><b>Employee Name can not be same!</b></html>"), 
+                     "Warning", JOptionPane.WARNING_MESSAGE);
             //JOptionPane.showMessageDialog(null, "Employee name cannot be empty.");
-            check1 = "don't go ahead";
+            check1 = "return";
             return;
         }
         
@@ -373,9 +377,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
 
             if (employee.getName().equals(nameJTextField.getText())) {
-                JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Multiple employees <font color='red'> can not</font> have same name!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
-                //JOptionPane.showMessageDialog(null, "Multiple employees cannot have same name.");
-                check1 = "don't go ahead";
+                JOptionPane.showMessageDialog(null, 
+                        new JLabel("<html><b>Multiple employees can not have same name!</b></html>"), 
+                        "Warning", JOptionPane.WARNING_MESSAGE);
+                check1 = "return";
                 return;
             }}
         }

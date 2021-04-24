@@ -290,7 +290,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             patient.getHLA().updateHLAlist(HLATypesTextField.getText());
         }
         catch (Exception e) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Patient's HLA Type can only be one of these <font color='red'>HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</font></I></h2></html>"));
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
             return;
         }
         patient.setEmergencyStatus(chkEmergency.isSelected());
@@ -299,7 +299,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         system.getPatientDirectory().addPatient(patient);
         
         populateTable();
-         JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>A new Patinet has been <font color='green'>added</font></I></h2></html>"));
+         JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>A new Patinet has been added</b></html>"));
            
         //JOptionPane.showMessageDialog(null,"New patient has been added!");
         
@@ -325,6 +325,13 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         }
         
+        if(ent == null) {
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>There is no Legal Enterprize!!<br>Request cannot be sent for Legal Approval!"
+                    + "<br>Patient cannot be created</b></html>"),
+            "Error",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
        
         for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
@@ -338,12 +345,10 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             org.getWorkQueue().getWorkRequestList().add(request);
             System.out.println(org.getName());
             userAccount.getWorkQueue().getWorkRequestList().add(request);
-            //user.addUserRequest(request);
             
             dB4OUtil.storeSystem(system);
             populateTable();
-            //JOptionPane.showMessageDialog(null,"Request Sent Successfully", "Info", JOptionPane.INFORMATION_MESSAGE);
-             JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Request has been sent for<font color='green'> Legal Approval!</I></font></h2></html>"));         
+             JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Request has been sent for Legal Approval!</b></html>"));         
             
         } else {
         

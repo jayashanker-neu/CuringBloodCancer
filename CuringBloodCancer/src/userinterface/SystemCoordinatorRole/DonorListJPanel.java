@@ -328,11 +328,11 @@ public class DonorListJPanel extends javax.swing.JPanel {
         int row1 = tblHospital.getSelectedRow();
         
         if (row < 0) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> Donors Table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the Donors Table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         else if (row1 < 0) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> Hospital Table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the Hospital Table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             return;
             //JOptionPane.showMessageDialog(null, "Please select a row from the Hospital table", "Warning", JOptionPane.WARNING_MESSAGE);
             //return;
@@ -363,7 +363,7 @@ public class DonorListJPanel extends javax.swing.JPanel {
                     org.getWorkQueue().getWorkRequestList().add(request);
                     System.out.println(org.getName());
                     userAccount.getWorkQueue().getWorkRequestList().add(request);
-                    JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>Request sent<font color='green'> successfully</font>!</I></font></h2></html>")
+                    JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>Request sent successfully!</b></html>")
                             , "Info", JOptionPane.INFORMATION_MESSAGE);
                     populateDonorTable();
                     populateRequestTable();

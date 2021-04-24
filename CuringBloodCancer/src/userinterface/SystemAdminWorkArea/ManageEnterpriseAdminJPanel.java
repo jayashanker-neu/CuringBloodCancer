@@ -371,7 +371,7 @@ private boolean checkUserIdExists(String userName) {
         // TODO add your handling code here:
         int row = enterpriseJTable.getSelectedRow();
         if (row < 0) {
-             JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> Table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+             JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the Table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             
             //JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -414,7 +414,7 @@ private boolean checkUserIdExists(String userName) {
         
         if (selectedRow < 0){
             //JOptionPane.showMessageDialog(null, "Please select a row to Process" ,"Warning" , JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> to process! </I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row to process! </b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             
             return;
@@ -423,7 +423,7 @@ private boolean checkUserIdExists(String userName) {
         else if (txtUserName.getText().isEmpty() || txtAdminName.getText().isEmpty() || txtPassword.getText().isEmpty()    )
         {
            //JOptionPane.showMessageDialog(null, "All fields are mandatory!","Warning",JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            return;
         }
         
@@ -431,14 +431,14 @@ private boolean checkUserIdExists(String userName) {
         else if (!checkUserIdExists(txtUserName.getText())){
             txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtUserName.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>User name</I><font color='red'> already</font> present!</h2></html>"),"Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>User name already present!</b></html>"),"Warning",JOptionPane.WARNING_MESSAGE);
             return;
             }
          
         else if (txtPassword.getText().length() < 4 ){
             txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtPassword.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Password</I></font> should be<font color='green'> more than 4 digit!</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Password should be more than 4 digit!!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(null, "Password should be more than 4 characters","Warning",JOptionPane.WARNING_MESSAGE);
             return;
             }
@@ -458,7 +458,7 @@ private boolean checkUserIdExists(String userName) {
         
         populateAdminTable(enterprise);
           
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2>New Admin<font color='green'><I> credentials</I></font> created!</h2></html>"));
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>New Admin credentials created!</b></html>"));
         
         dB4OUtil.storeSystem(system);
         

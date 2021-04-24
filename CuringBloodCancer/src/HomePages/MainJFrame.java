@@ -283,7 +283,11 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         
         if(userAccount==null){
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I><font color='red'>Invalid</font> credentials!</I></h2></html>"));
+        JOptionPane.showMessageDialog(null, 
+                new JLabel("<html><b>" + " Invalid Credentials!</b></html>"),
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+        );
             
             
             //JOptionPane.showMessageDialog(null, "Invalid credentials!");
@@ -326,9 +330,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         rightJPanel.removeAll();
         
-        JPanel blankJP = new JPanel();
-        blankJP.setBackground(new Color(241, 250, 238)); //[241,250,238]
-        rightJPanel.add("blankJP", blankJP);
+//        JPanel blankJP = new JPanel();
+//        blankJP.setBackground(new Color(241, 250, 238)); //[241,250,238]
+//        rightJPanel.add("blankJP", blankJP);
+        rightJPanel.add("blankJP", imgHope);
+        rightJPanel.setBackground(new Color(241, 250, 238));
 //        imgHope.setVisible(true);
         CardLayout crdLyt = (CardLayout) rightJPanel.getLayout();
         crdLyt.next(rightJPanel);
@@ -337,12 +343,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void donorSignUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donorSignUpBtnActionPerformed
         new DonorReceiverFramePage("donor", system).show();
-        imgHope.setVisible(false);
+//        imgHope.setVisible(false);
     }//GEN-LAST:event_donorSignUpBtnActionPerformed
 
     private void patientRegistrationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientRegistrationBtnActionPerformed
         new DonorReceiverFramePage("receiver", system).show();
-        imgHope.setVisible(false);
+//        imgHope.setVisible(false);
     }//GEN-LAST:event_patientRegistrationBtnActionPerformed
 
     /**

@@ -60,12 +60,12 @@ public class StatisticsJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        imgPie = new javax.swing.JLabel();
+        lblPieChart = new javax.swing.JLabel();
+        imgBar = new javax.swing.JLabel();
+        lblBarChart = new javax.swing.JLabel();
+        imgLine = new javax.swing.JLabel();
+        lblLineChart = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -76,70 +76,70 @@ public class StatisticsJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(1150, 86));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pieChartR.png"))); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        imgPie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pieChartR.png"))); // NOI18N
+        imgPie.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imgPie.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                imgPieMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3);
+        jPanel1.add(imgPie);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("PIE CHART");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblPieChart.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        lblPieChart.setForeground(new java.awt.Color(255, 255, 255));
+        lblPieChart.setText("PIE CHART");
+        lblPieChart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                lblPieChartMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel8);
+        jPanel1.add(lblPieChart);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barGraphR.png"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        imgBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barGraphR.png"))); // NOI18N
+        imgBar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imgBar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                imgBarMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel5MouseEntered(evt);
+                imgBarMouseEntered(evt);
             }
         });
-        jPanel1.add(jLabel5);
+        jPanel1.add(imgBar);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("BAR CHART");
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblBarChart.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        lblBarChart.setForeground(new java.awt.Color(255, 255, 255));
+        lblBarChart.setText("BAR CHART");
+        lblBarChart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                lblBarChartMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel9);
+        jPanel1.add(lblBarChart);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/line-chart.png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        imgLine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/line-chart.png"))); // NOI18N
+        imgLine.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imgLine.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                imgLineMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
+                imgLineMouseEntered(evt);
             }
         });
-        jPanel1.add(jLabel4);
+        jPanel1.add(imgLine);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("LINE CHART");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblLineChart.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        lblLineChart.setForeground(new java.awt.Color(255, 255, 255));
+        lblLineChart.setText("LINE CHART");
+        lblLineChart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                lblLineChartMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel6);
+        jPanel1.add(lblLineChart);
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1390, 80));
 
@@ -169,7 +169,75 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void imgPieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPieMouseClicked
+        // TODO add your handling code here:
+        
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        
+        pieDataset.setValue("BoneMarrow Donor", system.getDonorDirectory().getDonorList().size());
+        pieDataset.setValue("BoneMarrow Patient(Receiver)", system.getPatientDirectory().getPatientList().size());
+        
+        JFreeChart piechart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
+        PiePlot piechrt = (PiePlot)piechart.getPlot();
+        
+        ChartFrame chrtframe = new ChartFrame("Pie Chart", piechart);
+        chrtframe.setVisible(true);
+        chrtframe.setSize(1200,850);
+        chrtframe.setBackground(Color.WHITE);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
+    }//GEN-LAST:event_imgPieMouseClicked
+
+    private void imgLineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgLineMouseEntered
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_imgLineMouseEntered
+
+    private void imgLineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgLineMouseClicked
+        // TODO add your handling code here:
+        DefaultCategoryDataset linechartdata = new DefaultCategoryDataset();
+//        linechartdata.setValue(10, "No. Of Work Request","Day1");
+//        linechartdata.setValue(20, "No. Of Work Request","Day2");
+//        linechartdata.setValue(7, "No. Of Work Request","Day3");
+        linechartdata.setValue(system.getDonorDirectory().getDonorList().size(),"Patients/Donors","BoneMarrow Donor");
+        linechartdata.setValue(system.getPatientDirectory().getPatientList().size(),"Patients/Donors","BoneMarrow Patient(Receiver)");
+        
+        JFreeChart linechart = ChartFactory.createLineChart3D("Requests", "Patients/Donors", "Patients/Donors", linechartdata, PlotOrientation.VERTICAL, false, true, false);
+        CategoryPlot linechrt = linechart.getCategoryPlot();
+        linechrt.setRangeGridlinePaint(Color.ORANGE);
+        ChartFrame chrtframe = new ChartFrame("Contribution", linechart, true);
+        chrtframe.setVisible(true);
+        chrtframe.setSize(1200,850);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
+        
+        
+    }//GEN-LAST:event_imgLineMouseClicked
+
+    private void imgBarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBarMouseClicked
+        // TODO add your handling code here:
+        DefaultCategoryDataset barchartdata = new DefaultCategoryDataset();
+//        barchartdata.setValue(10, "No. Of Work Request","Day1");
+//        barchartdata.setValue(20, "No. Of Work Request","Day2");
+//        barchartdata.setValue(7, "No. Of Work Request","Day3");
+        barchartdata.setValue(system.getDonorDirectory().getDonorList().size(),"Patients/Donors","BoneMarrow Donor");
+        barchartdata.setValue(system.getPatientDirectory().getPatientList().size(),"Patients/Donors","BoneMarrow Patient(Receiver)");
+        JFreeChart barchart = ChartFactory.createBarChart3D("Requests", "Patients/Donors", "Patients/Donors", barchartdata, PlotOrientation.VERTICAL, false, true, false);
+        CategoryPlot barchrt = barchart.getCategoryPlot();
+        barchrt.setRangeGridlinePaint(Color.ORANGE);
+        ChartFrame chrtframe = new ChartFrame("Contribution", barchart, true);
+        chrtframe.setVisible(true);
+        chrtframe.setSize(1200,850);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
+    }//GEN-LAST:event_imgBarMouseClicked
+
+    private void imgBarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBarMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_imgBarMouseEntered
+
+    private void lblPieChartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPieChartMouseClicked
         // TODO add your handling code here:
         
         DefaultPieDataset pieDataset = new DefaultPieDataset();
@@ -187,39 +255,17 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         chrtframe.setBackground(Color.WHITE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_lblPieChartMouseClicked
 
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_jLabel4MouseEntered
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-        DefaultCategoryDataset linechartdata = new DefaultCategoryDataset();
-        linechartdata.setValue(10, "No. Of Work Request","Day1");
-        linechartdata.setValue(20, "No. Of Work Request","Day2");
-        linechartdata.setValue(7, "No. Of Work Request","Day3");
-        JFreeChart linechart = ChartFactory.createLineChart3D("Request per day", "Daily", "No. Of Work Request", linechartdata, PlotOrientation.VERTICAL, false, true, false);
-        CategoryPlot linechrt = linechart.getCategoryPlot();
-        linechrt.setRangeGridlinePaint(Color.ORANGE);
-        ChartFrame chrtframe = new ChartFrame("Contribution", linechart, true);
-        chrtframe.setVisible(true);
-        chrtframe.setSize(1200,850);
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-        
-        
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void lblBarChartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarChartMouseClicked
         // TODO add your handling code here:
         DefaultCategoryDataset barchartdata = new DefaultCategoryDataset();
-        barchartdata.setValue(10, "No. Of Work Request","Day1");
-        barchartdata.setValue(20, "No. Of Work Request","Day2");
-        barchartdata.setValue(7, "No. Of Work Request","Day3");
-        JFreeChart barchart = ChartFactory.createBarChart3D("Request per day", "Daily", "No. Of Work Request", barchartdata, PlotOrientation.VERTICAL, false, true, false);
+//        barchartdata.setValue(10, "No. Of Work Request","Day1");
+//        barchartdata.setValue(20, "No. Of Work Request","Day2");
+//        barchartdata.setValue(7, "No. Of Work Request","Day3");
+        barchartdata.setValue(system.getDonorDirectory().getDonorList().size(),"Patients/Donors","BoneMarrow Donor");
+        barchartdata.setValue(system.getPatientDirectory().getPatientList().size(),"Patients/Donors","BoneMarrow Patient(Receiver)");
+        JFreeChart barchart = ChartFactory.createBarChart3D("Requests", "Patients/Donors", "Patients/Donors", barchartdata, PlotOrientation.VERTICAL, false, true, false);
         CategoryPlot barchrt = barchart.getCategoryPlot();
         barchrt.setRangeGridlinePaint(Color.ORANGE);
         ChartFrame chrtframe = new ChartFrame("Contribution", barchart, true);
@@ -227,55 +273,18 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         chrtframe.setSize(1200,850);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_lblBarChartMouseClicked
 
-    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseEntered
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
-        
-        DefaultPieDataset pieDataset = new DefaultPieDataset();
-        
-        pieDataset.setValue("BoneMarrow Donor", system.getDonorDirectory().getDonorList().size());
-        pieDataset.setValue("BoneMarrow Patient(Receiver)", system.getPatientDirectory().getPatientList().size());
-       // pieDataset.setValue("Three", new Integer(30));
-       // pieDataset.setValue("Four", new Integer(40));
-        JFreeChart piechart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
-        PiePlot piechrt = (PiePlot)piechart.getPlot();
-        //piechrt.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame chrtframe = new ChartFrame("Pie Chart", piechart);
-        chrtframe.setVisible(true);
-        chrtframe.setSize(1200,850);
-        chrtframe.setBackground(Color.WHITE);
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-    }//GEN-LAST:event_jLabel8MouseClicked
-
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        // TODO add your handling code here:
-        DefaultCategoryDataset barchartdata = new DefaultCategoryDataset();
-        barchartdata.setValue(10, "No. Of Work Request","Day1");
-        barchartdata.setValue(20, "No. Of Work Request","Day2");
-        barchartdata.setValue(7, "No. Of Work Request","Day3");
-        JFreeChart barchart = ChartFactory.createBarChart3D("Request per day", "Daily", "No. Of Work Request", barchartdata, PlotOrientation.VERTICAL, false, true, false);
-        CategoryPlot barchrt = barchart.getCategoryPlot();
-        barchrt.setRangeGridlinePaint(Color.ORANGE);
-        ChartFrame chrtframe = new ChartFrame("Contribution", barchart, true);
-        chrtframe.setVisible(true);
-        chrtframe.setSize(1200,850);
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-    }//GEN-LAST:event_jLabel9MouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void lblLineChartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLineChartMouseClicked
         // TODO add your handling code here:
         DefaultCategoryDataset linechartdata = new DefaultCategoryDataset();
-        linechartdata.setValue(10, "No. Of Work Request","Day1");
-        linechartdata.setValue(20, "No. Of Work Request","Day2");
-        linechartdata.setValue(7, "No. Of Work Request","Day3");
-        JFreeChart linechart = ChartFactory.createLineChart3D("Request per day", "Daily", "No. Of Work Request", linechartdata, PlotOrientation.VERTICAL, false, true, false);
+//        linechartdata.setValue(10, "No. Of Work Request","Day1");
+//        linechartdata.setValue(20, "No. Of Work Request","Day2");
+//        linechartdata.setValue(7, "No. Of Work Request","Day3");
+        linechartdata.setValue(system.getDonorDirectory().getDonorList().size(),"Patients/Donors","BoneMarrow Donor");
+        linechartdata.setValue(system.getPatientDirectory().getPatientList().size(),"Patients/Donors","BoneMarrow Patient(Receiver)");
+        
+        JFreeChart linechart = ChartFactory.createLineChart3D("Requests", "Patients/Donors", "Patients/Donors", linechartdata, PlotOrientation.VERTICAL, false, true, false);
         CategoryPlot linechrt = linechart.getCategoryPlot();
         linechrt.setRangeGridlinePaint(Color.ORANGE);
         ChartFrame chrtframe = new ChartFrame("Contribution", linechart, true);
@@ -283,18 +292,18 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         chrtframe.setSize(1200,850);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_lblLineChartMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imgBar;
+    private javax.swing.JLabel imgLine;
+    private javax.swing.JLabel imgPie;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lblBarChart;
+    private javax.swing.JLabel lblLineChart;
+    private javax.swing.JLabel lblPieChart;
     // End of variables declaration//GEN-END:variables
 }

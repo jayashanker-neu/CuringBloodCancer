@@ -316,7 +316,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             networkJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             networkJComboBox.setForeground(Color.red);
             
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Select a<font color='red'> Network</font> please!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Select a Network please!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             
             check1 = "no";
@@ -327,7 +327,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             enterpriseTypeJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             enterpriseTypeJComboBox.setForeground(Color.red);
             
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Select an<font color='red'> Enterprise Type</font> please!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Select an Enterprise Type please!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             check1 = "no";
         }
@@ -360,7 +360,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         if(txtName.getText().isEmpty() || txtContact.getText().isEmpty() || txtEmail.getText().isEmpty() || txtZipCode.getText().isEmpty()
                 || network == null || type == null){
             //JOptionPane.showMessageDialog(null, "All fields are mandatory!");
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             
             check1 = "no";
             //return;
@@ -373,7 +373,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             txtContact.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtContact.setForeground(Color.red);
             
-           JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Contact Number</I></font> should be<font color='green'> 10 digit</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null, new JLabel("<html><b>Contact Number should be 10 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             
        //    return;
         }
@@ -384,7 +384,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
            txtZipCode.setBorder(BorderFactory.createLineBorder(Color.RED));
            txtZipCode.setForeground(Color.red);
            
-           JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Zip</I></font> should be<font color='green'> 5 digit</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null, new JLabel("<html><b>Zip should be 5 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            
          //  return;
         }
@@ -394,7 +394,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
            check1 = "no";
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtEmail.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Email ID</I></font> must be in<font color='green'> correct format</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in correct format!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
            //return;
         } 
@@ -404,7 +404,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
        
                 if (ent.getName().equals(txtName.getText())) {
-                    JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Enterprise Name</I></font> can not be<font color='red'> same</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, new JLabel("<html><b>Enterprise Name can not be same!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                     check1 = "no";
                     txtName.setBorder(BorderFactory.createLineBorder(Color.RED));
                     txtName.setForeground(Color.red);
@@ -424,7 +424,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
             populateNetworkTable();
         
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>New Enterprise</I><font color='green'> created </font><I>successfully!/I<></h2></html>"));
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>New Enterprise created successfully!</b></html>"));
                     
             //JOptionPane.showMessageDialog(null, "New Enterprise Created Successfully!");
         
@@ -475,7 +475,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         }
         else 
             return;
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Network Name</I></font> can not be <font color='red'>found</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b>Network Name can not be found!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
     }//GEN-LAST:event_btnDeleteActionPerformed
 

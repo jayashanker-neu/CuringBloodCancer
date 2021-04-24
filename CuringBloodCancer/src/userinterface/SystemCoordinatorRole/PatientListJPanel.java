@@ -231,13 +231,13 @@ public class PatientListJPanel extends javax.swing.JPanel {
         if (row < 0) {
             //JOptionPane.showMessageDialog(null, "Please select a row from the Request table", "Warning", JOptionPane.WARNING_MESSAGE);
             //return;
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> Request Table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the Request Table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if (row1 < 0) {
             //JOptionPane.showMessageDialog(null, "Please select a row from the Hospital table", "Warning", JOptionPane.WARNING_MESSAGE);
             //return;
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> Hospital Table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the Hospital Table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -265,7 +265,7 @@ public class PatientListJPanel extends javax.swing.JPanel {
                         System.out.println(org.getName());
                         userAccount.getWorkQueue().getWorkRequestList().add(request);
                         JOptionPane.showMessageDialog(null,
-                                new JLabel(  "<html><h2><I>Patient successfully<font color='green'> assigned</font> to the Hospital.</I></h2></html>"), 
+                                new JLabel(  "<html><b>Patient successfully assigned to the Hospital.</b></html>"), 
                                  "Info", JOptionPane.INFORMATION_MESSAGE);
                         populateRequestTable();
                     }
@@ -274,7 +274,7 @@ public class PatientListJPanel extends javax.swing.JPanel {
                     }
                 }   
             else{
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Work Request is<font color='red'> already</font> in progress!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Work Request is already in progress!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
                 }
         
         }

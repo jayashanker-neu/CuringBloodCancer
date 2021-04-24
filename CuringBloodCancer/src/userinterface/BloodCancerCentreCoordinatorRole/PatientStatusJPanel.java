@@ -30,11 +30,11 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         this.system = system;
         patientTable.getTableHeader().setDefaultRenderer(new MyTableFormat());
          patientTable1.getTableHeader().setDefaultRenderer(new MyTableFormat());
-        populateTable();
-        populateTable1();
+        populatePatientTable();
+        populatePatientRequestsTable();
         
     }
-    private void populateTable(){
+    private void populatePatientTable(){
         DefaultTableModel dtm = (DefaultTableModel) patientTable.getModel();
         
         dtm.setRowCount(0);
@@ -51,7 +51,7 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
          }
     }
     
-     private void populateTable1(){
+     private void populatePatientRequestsTable(){
         DefaultTableModel dtm = (DefaultTableModel) patientTable1.getModel();
         
         dtm.setRowCount(0);
@@ -84,6 +84,7 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         jLabel25 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         patientTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(241, 250, 238));
         setMinimumSize(new java.awt.Dimension(1100, 720));
@@ -91,8 +92,8 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Patients In Need Of Cancer Treatment");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
+        jLabel1.setText("All Patient Requests");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, -1, -1));
 
         patientTable.setBackground(new java.awt.Color(0, 0, 0));
         patientTable.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -120,7 +121,7 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         patientTable.setShowVerticalLines(false);
         jScrollPane1.setViewportView(patientTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 730, 190));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 730, 190));
 
         jButton2.setBackground(new java.awt.Color(31, 31, 31));
         jButton2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -131,11 +132,11 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 120, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 640, 120, 40));
 
         jPanel3.setBackground(new java.awt.Color(31, 31, 31));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
-        jPanel3.setLayout(new java.awt.GridLayout());
+        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,23 +172,23 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         patientTable1.setShowVerticalLines(false);
         jScrollPane2.setViewportView(patientTable1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 730, 210));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 730, 210));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setText("Patients In Need Of Cancer Treatment");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
         int selectedRow = patientTable1.getSelectedRow(); 
-          PatientRequest dr =((PatientRequest) patientTable1.getValueAt(selectedRow, 0));
- 
-          system.getPatientRequestDirectory().removePatientRequest(dr);
-          
-          //ddr.removeDonorRequest(dr);
-             
-          
-          dB4OUtil.storeSystem(system);
-          populateTable1();
-       
+        PatientRequest dr = (PatientRequest) patientTable1.getValueAt(selectedRow, 0);
+
+        system.getPatientRequestDirectory().removePatientRequest(dr);
+
+        dB4OUtil.storeSystem(system);
+        populatePatientRequestsTable();
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -196,6 +197,7 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

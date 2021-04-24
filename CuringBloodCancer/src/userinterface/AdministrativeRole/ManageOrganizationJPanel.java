@@ -322,7 +322,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             txtOrgRealName.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtOrgRealName.setForeground(Color.red);
 
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Organization Name<font color='red'> can not </font>be empty!/I<></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, 
+                    new JLabel("<html><b>Organization Name can not be empty!</b></html>") , 
+                    "Error", JOptionPane.ERROR_MESSAGE);
                    
 
             //JOptionPane.showMessageDialog(null, "Organization name cannot be empty!");
@@ -335,9 +337,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
             if (organization.getName().equals(txtOrgRealName.getText())) {
                 
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Organization name</I><font color='red'> already</font><I> exists!/I<></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
-                   
-                //JOptionPane.showMessageDialog(null, "Organization name already exists!");
+            JOptionPane.showMessageDialog(null, 
+                    new JLabel("<html><b>Organization name already exists!</b></html>") , 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            
                 check1 = "do not go further!";
                 return;
             }
@@ -365,9 +368,13 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         populateTable();
         
         
-       JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>A new Organization</I><font color='green'> created </font><I>successfully!/I<></h2></html>"));
+       JOptionPane.showMessageDialog(null, 
+               new JLabel("<html><b>"+ txtOrgRealName.getText() + " Organization Created!</b></html>"),
+                "Approved",
+                JOptionPane.INFORMATION_MESSAGE,
+                new javax.swing.ImageIcon(getClass().getResource("/images/approved.png"))
+       );
                    
-        //JOptionPane.showMessageDialog(null, "Organization created successfully!");
         
         
         dB4OUtil.storeSystem(system);

@@ -219,7 +219,7 @@ public class PatientConsentJPanel extends javax.swing.JPanel {
         int selectedRow = tblPatientConsent.getSelectedRow();
         
         if (selectedRow < 0){
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
            // JOptionPane.showMessageDialog(null,"Please select a row", "Info", JOptionPane.INFORMATION_MESSAGE);
             
@@ -235,7 +235,7 @@ public class PatientConsentJPanel extends javax.swing.JPanel {
         populatePatientConsentTable();
         
         //JOptionPane.showMessageDialog(null,"Legally Approved Successfully", "Info", JOptionPane.INFORMATION_MESSAGE);
-        JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Legally<font color='green'> approved</font> successfully!</I></font></h2></html>"),"Info", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Legally approved successfully!</b></html>"),"Info", JOptionPane.INFORMATION_MESSAGE);
            
         
         Enterprise ent = null;
@@ -328,7 +328,7 @@ public class PatientConsentJPanel extends javax.swing.JPanel {
         int selectedRow = tblPatientConsent.getSelectedRow();
         
         if (selectedRow < 0){
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Please select a row from the table</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
            // JOptionPane.showMessageDialog(null,"Please select a row", "Info", JOptionPane.INFORMATION_MESSAGE);
             return;
@@ -342,7 +342,7 @@ public class PatientConsentJPanel extends javax.swing.JPanel {
        
         dB4OUtil.storeSystem(system);
         populatePatientConsentTable();
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I><font color='red'> Legally Disapproved!</I></font></h2></html>"), "Info", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><b> Legally Disapproved!</b></html>"), "Info", JOptionPane.INFORMATION_MESSAGE);
            
         //JOptionPane.showMessageDialog(null,"Legally Disapproved", "Info", JOptionPane.INFORMATION_MESSAGE);
         

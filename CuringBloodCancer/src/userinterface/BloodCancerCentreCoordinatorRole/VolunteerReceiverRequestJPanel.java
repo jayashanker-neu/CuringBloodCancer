@@ -356,7 +356,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if( !statusText.getText().equals("New Request"))
             {
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Request<font color='red'> can not</font> be approved!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Request can not be approved!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
            
                 
             //    JOptionPane.showMessageDialog(null,"Can Not Approve the Request!");
@@ -371,7 +371,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             patient.getHLA().updateHLAlist(hlaText.getText());
         }
         catch (Exception e) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Patient's HLA Type can only be one of these <font color='red'>HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</font></I></h2></html>"));
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
             return;
         }
         
@@ -448,7 +448,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             
             dB4OUtil.storeSystem(system);
             populateRequestTable();
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Request<font color='green'> approved</font> successfully!</I></h2></html>"));
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Request approved successfully!</b></html>"));
            
             //JOptionPane.showMessageDialog(null,"Request Sent Successfully", "Info", JOptionPane.INFORMATION_MESSAGE);
             
@@ -470,7 +470,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         
        if(!statusText.getText().equals("New Request"))
                   {
-                      JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Request<font color='red'> can not</font> be rejected!</I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+                      JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Request can not be rejected!</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
           
                      // JOptionPane.showMessageDialog(null,"Can Not Reject the Request!");
         }
@@ -485,7 +485,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         dB4OUtil.storeSystem(system);   
         populateRequestTable();
         
-         JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Request has been<font color='red'> rejected</font>!</I></h2></html>"));
+         JOptionPane.showMessageDialog(null, new JLabel("<html><b>Request has been rejected!</b></html>"));
         
         //JOptionPane.showMessageDialog(null,"Rejected the Patient's Request!");
         }
@@ -500,11 +500,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
     private void requestTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_requestTableMousePressed
         int selectedRow = requestTable.getSelectedRow();
         if(selectedRow < 0){
-            
-//             JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
-           
-            
-            //JOptionPane.showMessageDialog(null,"Please select a row from the table first to View Details!","Warning!",JOptionPane.WARNING_MESSAGE);
         }
         else{
        //display the details 
