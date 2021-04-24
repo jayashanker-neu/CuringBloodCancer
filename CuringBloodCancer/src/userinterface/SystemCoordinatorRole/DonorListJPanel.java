@@ -343,12 +343,7 @@ public class DonorListJPanel extends javax.swing.JPanel {
                 request.setDonor((Donor) tblDonors.getValueAt(row, 0));
             if(request.getDonor().getStatus().equals("Government Approved"))
             {
-                request.setActionDate(new Date());
-                request.setAssigned("Hospital Pool");
-                request.setSummary("Requested for Donation");
-                request.setStatus("Assigned to Hospital"); // WorkRequest Status changed
-                request.setUserAccount(userAccount);
-                request.getDonor().setStatus("Assigned to Hospital"); // Donor's Status changed
+                
                 request.setEnterprise((Enterprise) tblHospital.getValueAt(row1, 0));
                 Organization org = null;
                 Enterprise enterprise = (Enterprise) tblHospital.getValueAt(row1, 0);
@@ -365,11 +360,18 @@ public class DonorListJPanel extends javax.swing.JPanel {
                     userAccount.getWorkQueue().getWorkRequestList().add(request);
                     JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>Request sent successfully!</b></html>")
                             , "Info", JOptionPane.INFORMATION_MESSAGE);
+                    request.setActionDate(new Date());
+                    request.setUserAccount(userAccount);
+                    request.getDonor().setStatus("Assigned to Hospital"); // Donor's Status changed
+                    request.setAssigned("Hospital Pool");
+                    request.setSummary("Requested for Donation");
+                    request.setStatus("Assigned to Hospital"); // WorkRequest Status changed
                     populateDonorTable();
                     populateRequestTable();
                 }
                 else {
                         JOptionPane.showMessageDialog(null, "No organization present", "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
                 }
             }
             else{
