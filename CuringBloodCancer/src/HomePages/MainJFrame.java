@@ -330,10 +330,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         rightJPanel.removeAll();
         
-//        JPanel blankJP = new JPanel();
-//        blankJP.setBackground(new Color(241, 250, 238)); //[241,250,238]
-//        rightJPanel.add("blankJP", blankJP);
-        rightJPanel.add("blankJP", imgHope);
+        JPanel blankJP = new JPanel();
+        blankJP.setBackground(new Color(241, 250, 238)); //[241,250,238]
+        rightJPanel.add("blankJP", blankJP);
+//        rightJPanel.add("blankJP", imgHope);
+
         rightJPanel.setBackground(new Color(241, 250, 238));
 //        imgHope.setVisible(true);
         CardLayout crdLyt = (CardLayout) rightJPanel.getLayout();
